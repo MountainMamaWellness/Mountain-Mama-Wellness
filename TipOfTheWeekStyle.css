@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 .banner {
@@ -15,23 +16,23 @@
 }
 
 .navbar {
-    width: 85%;
-    margin: auto;
-    padding: 35px 0;
+    width: 100%;
+    padding: 10px 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 2;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
 }
 
 .logo {
-    width: 90px;
+    width: 60px;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
+    top: 10px;
+    left: 10px;
     animation: bounce-in 2s ease-in-out;
 }
 
@@ -49,15 +50,14 @@
 
 .navbar ul {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    list-style: none;
     flex-wrap: wrap;
 }
 
 .navbar ul li {
-    list-style: none;
-    margin: 0 15px;
-    position: relative;
+    margin: 5px;
 }
 
 .navbar ul li a {
@@ -66,49 +66,20 @@
     text-transform: uppercase;
 }
 
-.navbar ul li::after {
-    content: '';
-    height: 3px;
-    width: 0%;
-    background: #00a2ff;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: 0.5s;
-}
-
-.navbar ul li:hover:after {
-    width: 100%;
-}
-
-.navbar button {
+.navbar ul li a button {
     background: none;
-    border: 5px solid #00a2ff;
+    border: 2px solid #00a2ff;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.5s, color 0.5s, transform 0.5s;
-    position: relative;
-    z-index: 2;
-    animation: button-slide-in 2s ease-in-out;
 }
 
-.navbar button:hover {
+.navbar ul li a button:hover {
     background: #00a2ff;
     color: #fff;
     transform: scale(1.1);
-}
-
-@keyframes button-slide-in {
-    from {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .content {
@@ -119,11 +90,12 @@
     text-align: center;
     color: #fff;
     z-index: 1;
+    padding: 10px;
 }
 
 .content h1 {
     font-size: 70px;
-    margin-top: 80px;
+    margin-top: 100px;
     color: rgb(255, 195, 167);
     overflow: hidden;
     border-right: .15em solid rgb(255, 255, 255);
@@ -180,32 +152,21 @@
         margin: 5px;
     }
 
+    .logo {
+        width: 50px;
+    }
+
     .content h1 {
-        font-size: 30px;
-        margin-top: 20px;
+        font-size: 40px;
+        margin-top: 100px;
     }
 
     .content a h2 {
         font-size: 14px;
     }
-
-    .logo {
-        width: 60px;
-    }
 }
 
 @media (max-width: 480px) {
-    .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Ensure the navbar is visible on top */
-    }
-
-    .content {
-        padding-top: 60px; /* Add padding to account for the navbar */
-    }
-
     .logo {
         display: none;
     }
@@ -220,13 +181,17 @@
         margin: 5px;
     }
 
-    .navbar button {
+    .navbar ul li a button {
         padding: 5px 10px;
         font-size: 12px;
     }
 
+    .content {
+        padding-top: 100px; /* Add padding to account for the navbar */
+    }
+
     .content h1 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .content a h2 {
