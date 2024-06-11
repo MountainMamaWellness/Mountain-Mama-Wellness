@@ -277,11 +277,6 @@
         margin: 10px 0;
     }
 
-    .animated-button {
-        padding: 16px 32px;
-        font-size: 18px;
-    }
-
     .content h1, .content2 h1, .content3 h1 {
         font-size: 50px;
         margin-top: 40px;
@@ -313,8 +308,11 @@
     }
 
     .animated-button {
-        padding: 20px 40px;
-        font-size: 20px;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        padding: 12px;
+        font-size: 18px;
     }
 
     .content h1, .content2 h1, .content3 h1 {
