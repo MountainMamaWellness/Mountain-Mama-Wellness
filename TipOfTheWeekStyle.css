@@ -50,6 +50,8 @@
 .navbar ul {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .navbar ul li {
@@ -168,11 +170,6 @@
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
     .navbar ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -183,14 +180,13 @@
         margin: 5px;
     }
 
-    .content h1, .content2 h1, .content3 h1 {
+    .content h1 {
         font-size: 30px;
         margin-top: 20px;
     }
 
-    .content p, .content2 ul li, .content3 p {
+    .content a h2 {
         font-size: 14px;
-        line-height: 20px;
     }
 
     .logo {
@@ -229,12 +225,11 @@
         font-size: 12px;
     }
 
-    .content h1, .content2 h1, .content3 h1 {
+    .content h1 {
         font-size: 24px;
     }
 
-    .content p, .content2 ul li, .content3 p {
+    .content a h2 {
         font-size: 12px;
-        line-height: 18px;
     }
 }
